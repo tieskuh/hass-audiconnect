@@ -47,6 +47,7 @@ SENSOR_TYPES: tuple[AudiBinarySensorDescription, ...] = (
         value_fn=lambda x: x != 2,
         translation_key="braking_status",
     ),
+    
     AudiBinarySensorDescription(
         icon="mdi:car-door-lock",
         key="lock_state_left_front_door",
