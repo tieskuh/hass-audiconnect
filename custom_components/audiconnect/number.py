@@ -16,29 +16,8 @@ from .helpers import AudiNumberDescription
 _LOGGER = logging.getLogger(__name__)
 
 SENSOR_TYPES: tuple[AudiNumberDescription, ...] = (
-    AudiNumberDescription(
-        icon="mdi:current-ac",
-        native_unit_of_measurement="A",
-        key="max_charge_current",
-        turn_mode="async_set_charger_max",
-        native_max_value=32,
-        native_min_value=0,
-        native_step=1,
-        translation_key="max_charge_current",
-        device_class=dc.CURRENT,
-    ),
-    AudiNumberDescription(
-        icon="mdi:temperature-celsius",
-        native_unit_of_measurement="°C",
-        key="climatisation_target_temp",
-        turn_mode="async_climater_temp",
-        value_fn=lambda x: round((int(x) - 2731) / 10, 1),
-        device_class=dc.TEMPERATURE,
-        native_max_value=40,
-        native_min_value=7,
-        native_step=0.1,
-        translation_key="climatisation_target_temp",
-    ),
+
+    
 )
 
 
