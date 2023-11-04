@@ -37,6 +37,11 @@ SENSOR_TYPES: tuple[AudiSensorDescription, ...] = (
         translation_key="utc_time_and_kilometer_status",
     ),
     AudiSensorDescription(
+        icon="mdi:ev-station",
+        key="charging_state",
+        translation_key="charging_state",
+    ),
+    AudiSensorDescription(
         icon="mdi:oil",
         native_unit_of_measurement="km",
         key="maintenance_interval_distance_to_oil_change",
@@ -46,11 +51,24 @@ SENSOR_TYPES: tuple[AudiSensorDescription, ...] = (
         translation_key="maintenance_interval_distance_to_oil_change",
     ),
     AudiSensorDescription(
-        icon="mdi:speedometer",
-        native_unit_of_measurement="km",
+        icon="mdi:temperature-celsius",
+        native_unit_of_measurement="°C",
         key="climatisation_target_temp",
-        device_class=dc.DISTANCE,
+        value_fn=lambda x: round((int(x) - 2730) / 10, 1),
+        device_class=dc.TEMPERATURE,
         translation_key="climatisation_target_temp",
+    ),
+    AudiSensorDescription(
+        icon="mdi:current-ac",
+        native_unit_of_measurement="A",
+        key="max_charge_current",
+        translation_key="max_charge_current",
+        device_class=dc.CURRENT,
+    ),
+    AudiSensorDescription(
+        icon="mdi:air-conditioner",
+        key="climatisation_state",
+        translation_key="climatisation_state",
     ),
     AudiSensorDescription(
         icon="mdi:oil",
@@ -216,6 +234,7 @@ SENSOR_TYPES: tuple[AudiSensorDescription, ...] = (
         key="doors_trunk_status",
         translation_key="doors_trunk_status",
     ),
+    
     # AudiSensorDescription(key="trip",translation_key="trip"),
     # AudiSensorDescription(key="trip_short_reset",translation_key="trip_short_reset"),
     # AudiSensorDescription(key="trip_short_current",translation_key="trip_short_current"),
