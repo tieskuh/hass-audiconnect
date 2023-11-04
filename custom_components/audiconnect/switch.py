@@ -16,27 +16,6 @@ from .helpers import AudiSwitchDescription
 _LOGGER = logging.getLogger(__name__)
 
 SENSOR_TYPES: tuple[AudiSwitchDescription, ...] = (
-    AudiSwitchDescription(
-        icon="mdi:heating-coil",
-        key="preheater_state",
-        turn_mode="async_pre_heating",
-        value_fn=lambda x: x is not None,
-        translation_key="preheater_state",
-    ),
-    AudiSwitchDescription(
-        icon="mdi:ev-station",
-        key="charging_state",
-        value_fn=lambda x: x != "off",
-        turn_mode="async_charger",
-        translation_key="charging_state",
-    ),
-    AudiSwitchDescription(
-        icon="mdi:air-conditioner",
-        key="climatisation_state",
-        turn_mode="async_climater",
-        value_fn=lambda x: x != "off",
-        translation_key="climatisation_state",
-    ),
 )
 
 
