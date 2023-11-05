@@ -46,6 +46,11 @@ SENSOR_TYPES: tuple[AudiSensorDescription, ...] = (
         translation_key="maintenance_interval_distance_to_oil_change",
     ),
     AudiSensorDescription(
+        icon="mdi:ev-station",
+        key="charging_state",
+        translation_key="charging_state",
+    ),
+    AudiSensorDescription(
         icon="mdi:speedometer",
         native_unit_of_measurement="km",
         key="climatisation_target_temp",
